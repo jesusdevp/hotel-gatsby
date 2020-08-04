@@ -15,6 +15,10 @@ const TextoInicio = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-column-gap: 2rem;
   }
+  p {
+    line-height: 2;
+    margin-top: 2rem;
+  }
 `
 
 const ContenidoInicio = () => {
