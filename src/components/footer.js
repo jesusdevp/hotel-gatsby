@@ -10,14 +10,14 @@ const EnlaceHome = styled(Link)`
   text-decoration: none;
 `
 
-const Footer = () => {
+const Footer = ({ title }) => {
   const year = new Date().getFullYear()
   return (
     <>
       <footer
         css={css`
           background-color: rgba(44, 62, 80);
-          margin-top: 5rem;
+          margin-top: 27rem;
           padding: 1rem;
         `}
       >
@@ -48,7 +48,7 @@ const Footer = () => {
           padding: 1rem;
         `}
       >
-        Hotel Gatsby. Todos los derechos Reservados {year} &copy;
+        {title}. Todos los derechos Reservados {year} &copy;
       </p>
     </>
   )
