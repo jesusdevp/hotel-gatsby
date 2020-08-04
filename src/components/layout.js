@@ -16,7 +16,7 @@ const Layout = props => {
             font-size: 1.8rem;
             line-height: 1.5;
             font-family: "PT Sans", sans-serif;
-            overflow-y: hidden;
+            /* overflow-y: hidden; */
           }
           h1,
           h2,
