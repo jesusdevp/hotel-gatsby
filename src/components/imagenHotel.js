@@ -4,7 +4,7 @@ import BackgroundImage from "gatsby-background-image"
 import styled from "@emotion/styled"
 
 const ImageBackground = styled(BackgroundImage)`
-  height: 750px;
+  height: 93vh;
 `
 
 const TextoImagen = styled.div`
@@ -38,23 +38,28 @@ const TextoImagen = styled.div`
 `
 
 const ImagenHotel = () => {
-  const { image } = useStaticQuery(graphql`
+  const info = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "1.jpg" }) {
-        sharp: childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp
+      allDatoCmsPagina(filter: { slug: { eq: "info" } }) {
+        nodes {
+          titulo
+          contenido
+          imagen {
+            fluid(maxWidth: 1200) {
+              ...GatsbyDatoCmsFluid
+            }
           }
         }
       }
     }
   `)
-  // console.log(image.sharp.fluid)
+
+  const { titulo, contenido, imagen } = info.allDatoCmsPagina.nodes[0]
   return (
-    <ImageBackground tag="section" fluid={image.sharp.fluid} fadeIn="soft">
+    <ImageBackground tag="section" fluid={imagen.fluid} fadeIn="soft">
       <TextoImagen>
-        <h1>Bienvenido a Hotel Gatsby</h1>
-        <p>El mejor lugar para ti y tu familia</p>
+        <h1>{titulo}</h1>
+        <p>{contenido}</p>
       </TextoImagen>
     </ImageBackground>
   )

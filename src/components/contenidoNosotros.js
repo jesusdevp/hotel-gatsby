@@ -8,6 +8,7 @@ const Contenido = styled.main`
   padding-top: 4rem;
   max-width: 1200px;
   width: 95%;
+  height: calc(100vh - 120px - 120px);
   margin: 0 auto;
 
   @media (min-width: 768px) {
@@ -53,7 +54,12 @@ const ContenidoNosotros = () => {
       </h2>
       <Contenido>
         <p>{contenido}</p>
-        <Image fluid={imagen.fluid} />
+        <Image
+          fluid={imagen.fluid}
+          css={css`
+            height: 300px;
+          `}
+        />
       </Contenido>
     </>
   )

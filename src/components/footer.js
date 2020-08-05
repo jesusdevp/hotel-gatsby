@@ -17,7 +17,7 @@ const Footer = ({ title }) => {
       <footer
         css={css`
           background-color: rgba(44, 62, 80);
-          margin-top: 27rem;
+          margin-top: 5rem;
           padding: 1rem;
         `}
       >
